@@ -1,6 +1,11 @@
 <template>
   <q-page>
+    <q-card class="q-mb-xs">
+      <q-card-section>
+       <span class="filter-title">Фильтр</span>
    <ToolbarCellFilter/>
+      </q-card-section>
+    </q-card>
    <BaseTable :columns="columns" :rows="rows" :title="title"/>
   </q-page>
 </template>

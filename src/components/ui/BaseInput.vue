@@ -4,6 +4,7 @@
       border
       clearable
       outlined
+      class="q-ma-md"
       dense
       :debounce="debounce"
       :placeholder="placeholder">

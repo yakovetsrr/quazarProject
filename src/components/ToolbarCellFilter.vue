@@ -10,7 +10,28 @@
           <q-icon name="search"></q-icon>
         </template>
       </BaseInput>
-     <BaseButton/>
+     <BaseButton @click="()=>isDialogVisible=!isDialogVisible" label="Добавить"/>
+
+      <q-dialog v-model="isDialogVisible" persistent>
+        <q-card>
+          <q-card-section class="row items-center q-pb-none">
+            <div class="text-h6">Добавление ячейки склада</div>
+            <q-space />
+            <q-btn icon="close" color="blue" flat round dense v-close-popup />
+          </q-card-section>
+
+          <q-card-section>
+            <q-form class="q-pa-md">
+            <BaseInput v-model="model3" placeholder="Введите ячейку.."></BaseInput>
+            <BaseInput v-model="model4" placeholder="Введите ячейку.."></BaseInput>
+            </q-form>
+          </q-card-section>
+          <q-card-section>
+            <BaseButton label="Отменить" color="red" v-close-popup/>
+            <BaseButton label="Сохранить"/>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
     </div>
   </div>
 
@@ -33,6 +54,9 @@ export default defineComponent({
       search: '',
       options: ['1', '2', '3'],
       options2: ['1', '2', '3'],
+      isDialogVisible: false,
+      model3:  '',
+      model4:'',
     }
   }
 })

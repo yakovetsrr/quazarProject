@@ -1,15 +1,21 @@
 <template>
-  <q-btn class="button"
+  <q-btn class="button q-ma-md"
          color="green"
          text-color="white"
-         label="Добавить" />
+         :label="label"/>
 </template>
 
 <script>
 import {defineComponent} from 'vue'
 
 export default defineComponent({
-  name: "BaseButton"
+  name: "BaseButton",
+
+  props:{
+    label:{
+      type: String,
+    }
+  }
 })
 </script>
 
