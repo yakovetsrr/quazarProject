@@ -1,7 +1,7 @@
 <template>
   <q-btn class="button q-ma-md"
-         color="green"
-         text-color="white"
+         :color="color"
+         :flat="flat"
          :label="label"/>
 </template>
 
@@ -14,6 +14,13 @@ export default defineComponent({
   props:{
     label:{
       type: String,
+    },
+    color:{
+      type: String,
+      default: "green",
+    },
+    flat:{
+      type: Boolean,
     }
   }
 })
